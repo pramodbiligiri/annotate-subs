@@ -2,7 +2,13 @@
 
 A toolkit for working with SRT subtitle files, featuring text extraction, paragraph formatting, and timestamp lookup.
 
-![Streamlit App Screenshot](https://via.placeholder.com/800x450.png?text=SRT+Subtitle+Analyzer)
+## Screenshots
+
+![SRT Analyzer Main Interface](srt-app-1.png)
+
+![Text Extraction View](srt-app-2.png)
+
+![Timestamp Lookup](srt-app-3.png)
 
 ## Features
 
