@@ -1,6 +1,6 @@
 # SRT Subtitle Analyzer
 
-A toolkit for working with SRT subtitle files, featuring text extraction, paragraph formatting, and timestamp lookup.
+A toolkit for working with SRT subtitle files, featuring text extraction, paragraph formatting, and timestamp lookup. Built partly to play around with [Claude Code](https://www.anthropic.com/news/claude-3-7-sonnet). Prompt session used to generate this app is in [this PDF](claude-prompt-session-srt-analyzer.pdf).
 
 ![SRT Subtitle Analyzer Interface](srt-app-4.png)
 
