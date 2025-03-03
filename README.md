@@ -17,7 +17,6 @@ A toolkit for working with SRT subtitle files, featuring text extraction, paragr
 ### Prerequisites
 
 - Python 3.8 or higher
-- Node.js (optional, only if using the Node-based components)
 
 ### Option 1: Using a virtual environment (recommended)
 
@@ -115,7 +114,6 @@ The timestamp finder:
 - `extract_srt_text.py` - CLI tool to extract formatted text from SRT files
 - `find_timestamp.py` - CLI tool to find timestamps for text snippets
 - `requirements.txt` - Python dependencies
-- `package.json` - Node.js configuration (if applicable)
 
 ## Contributing
 
