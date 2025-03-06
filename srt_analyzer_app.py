@@ -220,14 +220,16 @@ def main():
             st.session_state.formatted_text = formatted_text
             st.session_state.srt_content = srt_content
             st.session_state.subtitles = parse_srt_content(srt_content)
-            
-            # Display the formatted text
-            st.text_area("Extracted formatted text:", formatted_text, height=500)
+        
+        # Display the formatted text if it exists in session state, regardless of button press
+        if 'formatted_text' in st.session_state:
+            st.markdown("### Extracted formatted text:")
+            st.markdown(st.session_state.formatted_text)
             
             # Offer download of the formatted text
             st.download_button(
                 label="Download formatted text",
-                data=formatted_text,
+                data=st.session_state.formatted_text,
                 file_name="extracted_text.txt",
                 mime="text/plain"
             )
