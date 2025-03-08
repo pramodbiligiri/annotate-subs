@@ -81,20 +81,13 @@ The `generate-transcript.py` script is used to generate transcripts from audio f
 ### Usage
 
 ```bash
-python generate-transcript.py --input-audio-file <input_audio_file> [--output-transcript-file <output_transcript_file>] [--whisper-cpp-home <whisper_cpp_home>] [--duration-sec <duration_sec>]
+python generate-transcript.py --input-audio-file=<input_audio_file> [--output-transcript-file=<output_transcript_file>] [--whisper-cpp-home=<whisper_cpp_home>] [--duration-sec=<duration_sec>]
 ```
-
-### Arguments
-
-- `--input-audio-file`: Path to the input audio file (required).
-- `--output-transcript-file`: Path to the output transcript file (optional).
-- `--whisper-cpp-home`: Path to the Whisper CPP home directory (optional, falls back to `WHISPER_CPP_HOME` environment variable).
-- `--duration-sec`: Duration in seconds to process (optional, converted to milliseconds for Whisper).
 
 ### Example
 
 ```bash
-python generate-transcript.py --input-audio-file /path/to/audio.wav --output-transcript-file /path/to/output.srt --whisper-cpp-home /path/to/whisper.cpp --duration-sec 60
+python generate-transcript.py --input-audio-file=/path/to/audio.wav --output-transcript-file=/path/to/output.srt --whisper-cpp-home=/path/to/whisper.cpp --duration-sec=60
 ```
 
 This will generate a transcript for the specified audio file and save it to the specified output file.
@@ -106,17 +99,8 @@ The `generate-short-video.py` script is used to generate short videos from an im
 ### Usage
 
 ```bash
-python generate-short-video.py --input-image <input_image> --input-audio <input_audio> --input-srt <input_srt> --start-time <start_time> --end-time <end_time> --output-file <output_file>
+python generate-short-video.py --input-image=<input_image> --input-audio=<input_audio> --input-srt=<input_srt> --start-time=<start_time> --end-time=<end_time> --output-file=<output_file>
 ```
-
-### Arguments
-
-- `--input-image`: Path to the input image file (required).
-- `--input-audio`: Path to the input audio file (required).
-- `--input-srt`: Path to the input subtitle file (required).
-- `--start-time`: Start time for the video segment (required).
-- `--end-time`: End time for the video segment (required).
-- `--output-file`: Path to the output video file (required).
 
 ### Example
 
