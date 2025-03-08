@@ -123,6 +123,33 @@ python generate-transcript.py --input-audio-file /path/to/audio.wav --output-tra
 
 This will generate a transcript for the specified audio file and save it to the specified output file.
 
+### Generate Short Video
+
+The `generate-short-video.py` script is used to generate short videos from an image, audio, and subtitle file. It supports specifying the input image, input audio, input subtitle file, start time, end time, and output file.
+
+### Usage
+
+```bash
+python generate-short-video.py --input-image=<input_image> --input-audio=<input_audio> --input-srt=<input_srt> --start-time=<start_time> --end-time=<end_time> --output-file=<output_file>
+```
+
+### Arguments
+
+- `--input-image`: Path to the input image file (required).
+- `--input-audio`: Path to the input audio file (required).
+- `--input-srt`: Path to the input subtitle file (required).
+- `--start-time`: Start time for the video segment (required).
+- `--end-time`: End time for the video segment (required).
+- `--output-file`: Path to the output video file (required).
+
+### Example
+
+```bash
+python generate-short-video.py --input-image=thumbnail.jpeg --input-audio=episode-audio.wav --input-srt=episode-transcript.srt --start-time=00:31:22.880 --end-time=00:32:25.500 --output-file=short-video.mp4
+```
+
+This will generate a short video using the specified image, audio, and subtitle file, and save it to the specified output file.
+
 ## How It Works
 
 ### Text Extraction and Formatting
@@ -148,6 +175,7 @@ The timestamp finder:
 - `extract-srt-text.py` - CLI tool to extract formatted text from SRT files
 - `find-timestamp.py` - CLI tool to find timestamps for text snippets
 - `generate-transcript.py` - CLI tool to generate transcripts from audio files
+- `generate-short-video.py` - CLI tool to generate short videos from an image, audio, and subtitle file
 - `requirements.txt` - Python dependencies
 
 ## Contributing
