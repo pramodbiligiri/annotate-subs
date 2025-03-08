@@ -198,4 +198,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - [Streamlit](https://streamlit.io/) for the web application framework
 - Created with assistance from [Claude AI](https://claude.ai/)
-- [VS Code Insider](https://code.visualstudio.com/insiders/) for the development environment
+- [VS Code Insiders](https://code.visualstudio.com/insiders/) for the development environment
