@@ -89,6 +89,31 @@ python find_timestamp.py input.srt input.txt
 
 This will prompt you to enter text snippets to look up.
 
+## Generate Transcript
+
+The `generate_transcript.py` script is used to generate transcripts from audio files using the `whisper-cli` tool. It supports specifying the input audio file, output transcript file, Whisper CPP home directory, and duration in seconds for processing.
+
+### Usage
+
+```bash
+python generate_transcript.py --input-audio-file <input_audio_file> [--output-transcript-file <output_transcript_file>] [--whisper-cpp-home <whisper_cpp_home>] [--duration-sec <duration_sec>]
+```
+
+### Arguments
+
+- `--input-audio-file`: Path to the input audio file (required).
+- `--output-transcript-file`: Path to the output transcript file (optional).
+- `--whisper-cpp-home`: Path to the Whisper CPP home directory (optional, falls back to `WHISPER_CPP_HOME` environment variable).
+- `--duration-sec`: Duration in seconds to process (optional, converted to milliseconds for Whisper).
+
+### Example
+
+```bash
+python generate_transcript.py --input-audio-file /path/to/audio.wav --output-transcript-file /path/to/output.srt --whisper-cpp-home /path/to/whisper.cpp --duration-sec 60
+```
+
+This will generate a transcript for the specified audio file and save it to the specified output file.
+
 ## How It Works
 
 ### Text Extraction and Formatting
@@ -113,6 +138,7 @@ The timestamp finder:
 - `srt_analyzer_app.py` - Streamlit web application
 - `extract_srt_text.py` - CLI tool to extract formatted text from SRT files
 - `find_timestamp.py` - CLI tool to find timestamps for text snippets
+- `generate_transcript.py` - CLI tool to generate transcripts from audio files
 - `requirements.txt` - Python dependencies
 
 ## Contributing
