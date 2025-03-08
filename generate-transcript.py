@@ -88,3 +88,5 @@ if __name__ == '__main__':
         print("Error: --input-audio-file is required.")
         sys.exit(1)
     main(input_audio_file, output_transcript_file, whisper_cpp_home, duration_sec)
+
+# Renamed file to generate-transcript.py

@@ -7,6 +7,8 @@ removing timestamps, subtitle numbers, and other formatting elements.
 The text is organized into sensible paragraphs.
 """
 
+# Renamed file to extract-srt-text.py
+
 import re
 import sys
 import os

@@ -55,7 +55,7 @@ pip install -r requirements.txt
 The easiest way to use the SRT Subtitle Analyzer is through the Streamlit web interface:
 
 ```bash
-streamlit run srt_analyzer_app.py
+streamlit run srt-analyzer-app.py
 ```
 
 This will open a web interface in your browser where you can:
@@ -68,7 +68,7 @@ This will open a web interface in your browser where you can:
 #### Extract Clean Text
 
 ```bash
-python extract_srt_text.py input.srt [output.txt]
+python extract-srt-text.py input.srt [output.txt]
 ```
 
 This will extract the text content from `input.srt` and save it to `output.txt` (or `input.txt` if not specified), with proper paragraph formatting.
@@ -76,7 +76,7 @@ This will extract the text content from `input.srt` and save it to `output.txt` 
 #### Find Timestamp for Text
 
 ```bash
-python find_timestamp.py input.srt "text to find"
+python find-timestamp.py input.srt "text to find"
 ```
 
 This will search for the quoted text in the SRT file and display the corresponding timestamp.
@@ -84,19 +84,19 @@ This will search for the quoted text in the SRT file and display the correspondi
 You can also use the interactive mode:
 
 ```bash
-python find_timestamp.py input.srt input.txt
+python find-timestamp.py input.srt input.txt
 ```
 
 This will prompt you to enter text snippets to look up.
 
-## Generate Transcript
+### Generate Transcript
 
-The `generate_transcript.py` script is used to generate transcripts from audio files using the `whisper-cli` tool. It supports specifying the input audio file, output transcript file, Whisper CPP home directory, and duration in seconds for processing.
+The `generate-transcript.py` script is used to generate transcripts from audio files using the `whisper-cli` tool. It supports specifying the input audio file, output transcript file, Whisper CPP home directory, and duration in seconds for processing.
 
 ### Usage
 
 ```bash
-python generate_transcript.py --input-audio-file <input_audio_file> [--output-transcript-file <output_transcript_file>] [--whisper-cpp-home <whisper_cpp_home>] [--duration-sec <duration_sec>]
+python generate-transcript.py --input-audio-file <input_audio_file> [--output-transcript-file <output_transcript_file>] [--whisper-cpp-home <whisper_cpp_home>] [--duration-sec <duration_sec>]
 ```
 
 ### Arguments
@@ -109,7 +109,7 @@ python generate_transcript.py --input-audio-file <input_audio_file> [--output-tr
 ### Example
 
 ```bash
-python generate_transcript.py --input-audio-file /path/to/audio.wav --output-transcript-file /path/to/output.srt --whisper-cpp-home /path/to/whisper.cpp --duration-sec 60
+python generate-transcript.py --input-audio-file /path/to/audio.wav --output-transcript-file /path/to/output.srt --whisper-cpp-home /path/to/whisper.cpp --duration-sec 60
 ```
 
 This will generate a transcript for the specified audio file and save it to the specified output file.
@@ -136,9 +136,9 @@ The timestamp finder:
 ## Project Structure
 
 - `srt_analyzer_app.py` - Streamlit web application
-- `extract_srt_text.py` - CLI tool to extract formatted text from SRT files
-- `find_timestamp.py` - CLI tool to find timestamps for text snippets
-- `generate_transcript.py` - CLI tool to generate transcripts from audio files
+- `extract-srt-text.py` - CLI tool to extract formatted text from SRT files
+- `find-timestamp.py` - CLI tool to find timestamps for text snippets
+- `generate-transcript.py` - CLI tool to generate transcripts from audio files
 - `requirements.txt` - Python dependencies
 
 ## Contributing

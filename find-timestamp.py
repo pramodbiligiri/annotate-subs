@@ -6,6 +6,8 @@ This script takes a text snippet and finds where it appears in the original SRT 
 returning the corresponding timestamp.
 """
 
+# Renamed file to find-timestamp.py
+
 import re
 import sys
 import os
