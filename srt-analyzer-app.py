@@ -172,7 +172,7 @@ def find_timestamp_for_text(subtitles, text_snippet):
 
 def main():
     """Main Streamlit app."""
-    st.title("SRT Subtitle Analyzer")
+    st.title("Caption Flow")
     st.markdown("Extract clean text from subtitles and find timestamps for specific content.")
     
     # Search bar at the top with button next to it
