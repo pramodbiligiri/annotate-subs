@@ -74,30 +74,6 @@ This will open a web interface in your browser where you can:
 
 ### Command Line Tools
 
-#### Extract Clean Text
-
-```bash
-python extract-srt-text.py input.srt [output.txt]
-```
-
-This will extract the text content from `input.srt` and save it to `output.txt` (or `input.txt` if not specified), with proper paragraph formatting.
-
-#### Find Timestamp for Text
-
-```bash
-python find-timestamp.py input.srt "text to find"
-```
-
-This will search for the quoted text in the SRT file and display the corresponding timestamp.
-
-You can also use the interactive mode:
-
-```bash
-python find-timestamp.py input.srt input.txt
-```
-
-This will prompt you to enter text snippets to look up.
-
 ### Generate Transcript
 
 The `generate-transcript.py` script is used to generate transcripts from audio files using the `whisper-cli` tool. It supports specifying the input audio file, output transcript file, Whisper CPP home directory, and duration in seconds for processing.
@@ -130,7 +106,7 @@ The `generate-short-video.py` script is used to generate short videos from an im
 ### Usage
 
 ```bash
-python generate-short-video.py --input-image=<input_image> --input-audio=<input_audio> --input-srt=<input_srt> --start-time=<start_time> --end-time=<end_time> --output-file=<output_file>
+python generate-short-video.py --input-image <input_image> --input-audio <input_audio> --input-srt <input_srt> --start-time <start_time> --end-time <end_time> --output-file <output_file>
 ```
 
 ### Arguments
@@ -145,10 +121,58 @@ python generate-short-video.py --input-image=<input_image> --input-audio=<input_
 ### Example
 
 ```bash
-python generate-short-video.py --input-image=thumbnail.jpeg --input-audio=episode-audio.wav --input-srt=episode-transcript.srt --start-time=00:31:22.880 --end-time=00:32:25.500 --output-file=short-video.mp4
+python generate-short-video.py --input-image=thumbnail.jpeg --input-audio=episode-audio.wav --input-srt=episode-transcript.srt --start-time=00:31:22.880 --end-time=00:32:25.500 --output-file=episode-short-1.mp4
 ```
 
 This will generate a short video using the specified image, audio, and subtitle file, and save it to the specified output file.
+
+### Extract Clean Text
+
+```bash
+python extract-srt-text.py input.srt [output.txt]
+```
+
+This will extract the text content from `input.srt` and save it to `output.txt` (or `input.txt` if not specified), with proper paragraph formatting.
+
+### Find Timestamp for Text
+
+```bash
+python find-timestamp.py input.srt "text to find"
+```
+
+This will search for the quoted text in the SRT file and display the corresponding timestamp.
+
+You can also use the interactive mode:
+
+```bash
+python find-timestamp.py input.srt input.txt
+```
+
+This will prompt you to enter text snippets to look up.
+
+### Extract Clean Text
+
+```bash
+python extract-srt-text.py input.srt [output.txt]
+```
+
+This will extract the text content from `input.srt` and save it to `output.txt` (or `input.txt` if not specified), with proper paragraph formatting.
+
+### Find Timestamp for Text
+
+```bash
+python find-timestamp.py input.srt "text to find"
+```
+
+This will search for the quoted text in the SRT file and display the corresponding timestamp.
+
+You can also use the interactive mode:
+
+```bash
+python find-timestamp.py input.srt input.txt
+```
+
+This will prompt you to enter text snippets to look up.
 
 ## How It Works
 
@@ -190,3 +214,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - [Streamlit](https://streamlit.io/) for the web application framework
 - Created with assistance from [Claude AI](https://claude.ai/)
+- [VS Code Insider](https://code.visualstudio.com/insiders/) for the development environment
