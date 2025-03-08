@@ -4,7 +4,7 @@ Some scripts and small webapp for working with SRT subtitle files, featuring tex
 
 Built partly to play around with some software tools:
 
-* [Claude Code](https://www.anthropic.com/news/claude-3-7-sonnet) was used to create this app, esp the [`srt-analyzer-app.py`](srt-analyzer-app.py) Streamlit app. The prompts used are in [this PDF](claude-prompt-session-srt-analyzer.pdf).
+* [Claude Code](https://www.anthropic.com/news/claude-3-7-sonnet) was used to create this app, esp the [`caption-flow-app.py`](caption-flow-app.py) Streamlit app. The prompts used are in [this PDF](claude-prompt-session-srt-analyzer.pdf).
 
 * The [`generate-transcript.py`](generate-transcript.py) script was created using [VS Code Insider](https://code.visualstudio.com/insiders/). The prompts used are in [this PDF](vs-code-prompts-1.pdf).
 
@@ -64,7 +64,7 @@ pip install -r requirements.txt
 The easiest way to use the Caption Flow is through the Streamlit web interface:
 
 ```bash
-streamlit run srt-analyzer-app.py
+streamlit run caption-flow-app.py
 ```
 
 This will open a web interface in your browser where you can:
@@ -144,7 +144,7 @@ The timestamp finder:
 
 ## Project Structure
 
-- `srt_analyzer_app.py` - Streamlit web application
+- `caption-flow-app.py` - Streamlit web application
 - `extract-srt-text.py` - CLI tool to extract formatted text from SRT files
 - `find-timestamp.py` - CLI tool to find timestamps for text snippets
 - `generate-transcript.py` - CLI tool to generate transcripts from audio files
