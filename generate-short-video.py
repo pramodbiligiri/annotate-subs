@@ -3,6 +3,9 @@ import sys
 
 # Main function
 def main(input_image, input_audio, input_srt, start_time, end_time, output_file):
+    # Replace comma with dot in start_time and end_time
+    start_time = start_time.replace(',', '.')
+    end_time = end_time.replace(',', '.')
     command = [
         "ffmpeg",
         "-r", "1",
