@@ -74,6 +74,24 @@ This will open a web interface in your browser where you can:
 
 ### Command Line Tools
 
+### Generate Whisper Compatible Audio
+
+The `generate-whisper-compat-audio.py` script is used to convert the audio of a podcast into a [Whisper CPP](https://github.com/ggerganov/whisper.cpp) compatible WAV file. It supports specifying the input audio file and the output file.
+
+### Usage
+
+```bash
+python generate-whisper-compat-audio.py --input-audio=<input_audio> --output-file=<output_file>
+```
+
+### Example
+
+```bash
+python generate-whisper-compat-audio.py --input-audio=podcast-episode.mp3 --output-file=podcast-episode.wav
+```
+
+This will convert the specified audio file into a WAV file compatible with Whisper CPP.
+
 ### Generate Transcript
 
 The `generate-transcript.py` script is used to generate transcripts from audio files using the `whisper-cli` tool. It supports specifying the input audio file, output transcript file, Whisper CPP home directory, and duration in seconds for processing.
@@ -184,6 +202,7 @@ The timestamp finder:
 - `find-timestamp.py` - CLI tool to find timestamps for text snippets
 - `generate-transcript.py` - CLI tool to generate transcripts from audio files
 - `generate-short-video.py` - CLI tool to generate short videos from an image, audio, and subtitle file
+- `generate-whisper-compat-audio.py` - CLI tool to generate Whisper CPP compatible WAV files from MP3 podcasts
 - `requirements.txt` - Python dependencies
 
 ## Contributing
