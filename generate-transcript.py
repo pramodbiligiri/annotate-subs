@@ -2,6 +2,7 @@ import sys
 import os
 import json
 import subprocess
+import argparse
 
 # Main function
 
@@ -68,25 +69,11 @@ def main(input_audio_file, output_transcript_file=None, whisper_cpp_home=None, d
         file.write(result.stdout)
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("Usage: python generate_transcript.py --input-audio-file <input_audio_file> [--output-transcript-file <output_transcript_file>] [--whisper-cpp-home <whisper_cpp_home>] [--duration-sec <duration_sec>]")
-        sys.exit(1)
-    input_audio_file = None
-    output_transcript_file = None
-    whisper_cpp_home = None
-    duration_sec = None
-    for arg in sys.argv[1:]:
-        if arg.startswith('--input-audio-file='):
-            input_audio_file = arg.split('=')[1]
-        elif arg.startswith('--output-transcript-file='):
-            output_transcript_file = arg.split('=')[1]
-        elif arg.startswith('--whisper-cpp-home='):
-            whisper_cpp_home = arg.split('=')[1]
-        elif arg.startswith('--duration-sec='):
-            duration_sec = arg.split('=')[1]
-    if not input_audio_file:
-        print("Error: --input-audio-file is required.")
-        sys.exit(1)
-    main(input_audio_file, output_transcript_file, whisper_cpp_home, duration_sec)
+    parser = argparse.ArgumentParser(description='Generate transcripts from audio files using whisper-cli.')
+    parser.add_argument('--input-audio-file', required=True, help='Path to the input audio file')
+    parser.add_argument('--output-transcript-file', help='Path to the output transcript file')
+    parser.add_argument('--whisper-cpp-home', help='Path to the Whisper CPP home directory')
+    parser.add_argument('--duration-sec', type=int, help='Duration in seconds for processing')
+    args = parser.parse_args()
 
-# Renamed file to generate-transcript.py
+    main(args.input_audio_file, args.output_transcript_file, args.whisper_cpp_home, args.duration_sec)

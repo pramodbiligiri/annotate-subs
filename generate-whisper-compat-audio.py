@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import argparse
 
 # Main function
 def main(input_audio, output_file):
@@ -23,20 +24,9 @@ def main(input_audio, output_file):
         sys.exit(1)
 
 if __name__ == '__main__':
-    if len(sys.argv) < 3:
-        print("Usage: python generate-whisper-compat-audio.py --input-audio <input_audio> --output-file <output_file>")
-        sys.exit(1)
-    input_audio = None
-    output_file = None
-    for arg in sys.argv[1:]:
-        if arg.startswith('--input-audio='):
-            input_audio = arg.split('=')[1]
-        elif arg.startswith('--output-file='):
-            output_file = arg.split('=')[1]
-    if not input_audio:
-        print("Error: --input-audio parameter is required.")
-    if not output_file:
-        print("Error: --output-file parameter is required.")
-    if not input_audio or not output_file:
-        sys.exit(1)
-    main(input_audio, output_file)
+    parser = argparse.ArgumentParser(description='Convert the audio of a podcast into a Whisper CPP compatible WAV file.')
+    parser.add_argument('--input-audio', required=True, help='Path to the input audio file')
+    parser.add_argument('--output-file', required=True, help='Path to the output WAV file')
+    args = parser.parse_args()
+
+    main(args.input_audio, args.output_file)
