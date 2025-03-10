@@ -21,7 +21,7 @@ def main(input_image, input_audio, input_srt, start_time, end_time, output_file)
         "-preset", "slow",
         "-ss", start_time,
         "-to", end_time,
-        "-vf", f"subtitles={input_srt}:force_style='Fontname=Open Sans Semibold,Fontsize=16,Bold=1',setdar=9/16",
+        "-vf", f"pad=1080:1920:(1080-iw)/2:230:color=black,subtitles={input_srt}:force_style='Fontname=Open Sans Semibold,Fontsize=14,Bold=1,MarginV=50',setdar=9/16",
         "-movflags", "+faststart",
         output_file
     ]
